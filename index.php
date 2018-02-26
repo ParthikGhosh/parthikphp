@@ -6,9 +6,10 @@ $dbpwd = getenv("DB_PASSWORD");
 $dbname = getenv("DB_NAME");
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
+    printf("<br><h2>Mysql backing service secrets missing...</h2><br>");
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-echo "<br><br><h2>Welcome to Openshift :)</h2><br><br><br><br>";
+echo "<br><h2>Mysql backing services provisioned via service broker is available...</h2><br>";
 $connection->close();
 ?>
